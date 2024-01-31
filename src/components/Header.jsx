@@ -1,8 +1,8 @@
 export default function () {
   return (
-    <div className="w-[2420px] h-[100px] px-[270px] py-8 flex-col justify-start items-start flex">
-      <div className="justify-start items-start gap-[200px] inline-flex">
-        <div className="h-6 justify-center items-center gap-[260px] flex">
+    <div className="w-[2420px] h-[100px] px-[150px] py-8 items-start flex">
+      <div className="justify-start items-start inline-flex">
+        <div className="h-6 gap-[150px] flex">
           <svg
             width="158"
             height="36"
