@@ -79,3 +79,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+//some text
