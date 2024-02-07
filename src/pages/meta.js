@@ -52,7 +52,9 @@ export default function Page({ articles }) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch("https://dev.to/api/articles?tag=meta");
+  const response = await fetch(
+    "https://blog-back-end-kappa.vercel.app/api/meta?per_page=30"
+  );
   const articles = await response.json();
 
   return {

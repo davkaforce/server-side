@@ -59,7 +59,9 @@ export default function Machinelearning({ articles }) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch("http://localhost:4000/api/machinelearning");
+  const response = await fetch(
+    "https://blog-back-end-kappa.vercel.app/api/machinelearning"
+  );
   const articles = await response.json();
 
   return {
