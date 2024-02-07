@@ -8,9 +8,14 @@ export default function Machinelearning({ articles }) {
   return (
     <div>
       <div className="w-[2220px] h-[25px] justify-start gap-10 flex pl-[50px]">
-        <div className=" text-zinc-600 text-2xs font-bold font-['Work Sans'] leading-[25px]">
+        <button
+          onClick={() => {
+            router.push("/");
+          }}
+          className=" text-zinc-600 text-2xs font-bold font-['Work Sans'] leading-[25px]"
+        >
           All
-        </div>
+        </button>
         <button
           onClick={() => {
             router.push("/machinelearning");
@@ -42,7 +47,11 @@ export default function Machinelearning({ articles }) {
       </div>
       <div>
         {articles.map((article) => (
-          <Card title={article.title} url={article.cover_image} />
+          <Card
+            title={article.title}
+            url={article.cover_image}
+            id={article.id}
+          />
         ))}
       </div>
     </div>
@@ -50,9 +59,7 @@ export default function Machinelearning({ articles }) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch(
-    "https://dev.to/api/articles?tag=machinelearning"
-  );
+  const response = await fetch("http://localhost:4000/api/machinelearning");
   const articles = await response.json();
 
   return {

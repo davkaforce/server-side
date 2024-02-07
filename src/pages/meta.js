@@ -43,6 +43,7 @@ export default function Page({ articles }) {
             title={article.title}
             url={article.cover_image}
             tags={article.tags}
+            id={article.id}
           />
         ))}
       </div>

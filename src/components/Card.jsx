@@ -1,8 +1,16 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 export default function Card(props) {
+  const router = useRouter();
+  const articleId = props.id;
   return (
-    <div className="w-[392px] h-[488px] p-4 bg-white rounded-xl border border-gray-200 flex-col justify-center items-center gap-4 inline-flex">
+    <div
+      onClick={() => {
+        router.push(`/${articleId}`);
+      }}
+      className="w-[392px] h-[488px] p-4 bg-white rounded-xl border border-gray-200 flex-col justify-center items-center gap-4 inline-flex"
+    >
       <img
         src={props.url}
         className="w-[300px] h-[150px] rounded-md object-cover"
@@ -36,3 +44,5 @@ export default function Card(props) {
     </div>
   );
 }
+
+
